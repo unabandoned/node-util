@@ -1,24 +1,34 @@
 var spawn = require('child_process').spawn;
 var path = require('path');
-var series = require('run-series');
 
-function test(filename) {
-  return function(cb) {
-    var proc = spawn(process.argv[0], [ filename ], { stdio: 'inherit' });
+var tests = [
+  require.resolve('./debug'),
+  require.resolve('./format'),
+  require.resolve('./inspect'),
+  require.resolve('./log'),
+  require.resolve('./promisify'),
+  require.resolve('./callbackify'),
+  require.resolve('./types')
+];
+
+function run(filename) {
+  return new Promise(function (resolve, reject) {
+    var proc = spawn(process.argv[0], [filename], { stdio: 'inherit' });
     proc.on('close', function (code) {
-      cb(code !== 0 ? new Error('test ' + path.basename(filename) + ' failed') : null);
+      if (code !== 0) {
+        reject(new Error('test ' + path.basename(filename) + ' failed'));
+      } else {
+        resolve();
+      }
     });
-  };
+  });
 }
 
-series([
-  test(require.resolve('./debug')),
-  test(require.resolve('./format')),
-  test(require.resolve('./inspect')),
-  test(require.resolve('./log')),
-  test(require.resolve('./promisify')),
-  test(require.resolve('./callbackify')),
-  test(require.resolve('./types'))
-], function (err) {
-  if (err) throw err
+(async function () {
+  for (var i = 0; i < tests.length; i++) {
+    await run(tests[i]);
+  }
+})().catch(function (err) {
+  console.error(err);
+  process.exit(1);
 });
