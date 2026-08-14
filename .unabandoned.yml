@@ -1,0 +1,20 @@
+schema: 1
+
+package: "@unabandoned/util"
+
+upstream:
+  repo: browserify/node-util
+  reason: "unmaintained upstream — the package sits idle while its dependency tree ages"
+
+summary: >-
+  Node's core `util` module reimplemented for the browser and other environments
+  without Node's built-in util.
+
+why-forked: >-
+  A transitive dependency of browserify-style bundling that went unmaintained
+  while its tree aged; forked so Renovate keeps that tree current for the
+  consumers that pull it in transitively.
+
+status: active
+
+tags: [browser, util, node-core-polyfill, browserify]
