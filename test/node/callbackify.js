@@ -190,6 +190,4 @@ if (false) {
   });
 }
 
-if (require('is-async-supported')()) {
-  require('./callbackify-async');
-}
+require('./callbackify-async');
