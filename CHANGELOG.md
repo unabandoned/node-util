@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12.6](https://github.com/unabandoned/node-util/compare/util-v0.12.5...util-v0.12.6) (2026-08-14)
+
+
+### Features
+
+* avoid SharedArrayBuffer until required ([de16a49](https://github.com/unabandoned/node-util/commit/de16a4905b06bd878ebc6c061f5300fe6f39979d))
+* onboard as @unabandoned/util with a maintained dependency tree ([#1](https://github.com/unabandoned/node-util/issues/1)) ([e27b125](https://github.com/unabandoned/node-util/commit/e27b12573d1110215219ea327c47006016c8d231))
+
+
+### Bug Fixes
+
+* handle SharedArrayBuffer not existing ([6a8d35c](https://github.com/unabandoned/node-util/commit/6a8d35c040aa88c0c5ae998f446fad9e4e3e6871))
+* remove getter, store copy of SAB ([62f00fd](https://github.com/unabandoned/node-util/commit/62f00fd96de23ba82685b819f7ecfb20b94a9bc6))
+
+
+### Dependencies & maintenance
+
+* move safe-buffer to devDependencies, fixes [#65](https://github.com/unabandoned/node-util/issues/65) ([e84cfd5](https://github.com/unabandoned/node-util/commit/e84cfd5e4923631d012e578d7aa140412a475646))
+* nicer matrix ([2fe437a](https://github.com/unabandoned/node-util/commit/2fe437acc608f8cf63152b88d964196da39a2a92))
+* replace deprecated String.prototype.substr() ([a292d8a](https://github.com/unabandoned/node-util/commit/a292d8a73ac877cc9a0ae64b287cc064dcbacb54))
+* replace deprecated String.prototype.substr() ([073daed](https://github.com/unabandoned/node-util/commit/073daedb56d8737ac0e5e5f76559d83cbf3d659b))
+
 ## 0.12.5
 * Move `safe-buffer` dependency to a dev-only dependency. ([@goto-bus-stop](https://github.com/goto-bus-stop) in [e84cfd5](https://github.com/browserify/node-util/commit/e84cfd5e4923631d012e578d7aa140412a475646))
 * Document usage with webpack 5+. ([@MatrixFrog](https://github.com/MatrixFrog) in [#69](https://github.com/browserify/node-util/pull/69))
