@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12.7](https://github.com/unabandoned/node-util/compare/util-v0.12.6...util-v0.12.7) (2026-08-15)
+
+
+### Dependencies & maintenance
+
+* add .unabandoned.yml dashboard metadata ([#8](https://github.com/unabandoned/node-util/issues/8)) ([449fc6b](https://github.com/unabandoned/node-util/commit/449fc6b5e0355fb1bbb2f1119072613c741f4c9f))
+* **deps:** pin dependencies ([#3](https://github.com/unabandoned/node-util/issues/3)) ([ec32fd6](https://github.com/unabandoned/node-util/commit/ec32fd672f5afc077281bcafe6729cf0bb28bded))
+* **deps:** update unabandoned/.github digest to 461710f ([#7](https://github.com/unabandoned/node-util/issues/7)) ([091a231](https://github.com/unabandoned/node-util/commit/091a231e7c45b4e77e3f7de55fc1bcd26903c3f4))
+* **deps:** update unabandoned/.github digest to ae2bd5a ([#4](https://github.com/unabandoned/node-util/issues/4)) ([311a579](https://github.com/unabandoned/node-util/commit/311a579f6bb4366d5d62022f068a39b2fb3487aa))
+* drop the two abandoned-on-abandoned type checks from the runtime tree ([#10](https://github.com/unabandoned/node-util/issues/10)) ([9cc08f3](https://github.com/unabandoned/node-util/commit/9cc08f3bae5dea65a9d3b04d529ed28673b39b60))
+* pin reusable workflows to the @unabandoned/.github v1.0.0 release ([#9](https://github.com/unabandoned/node-util/issues/9)) ([0e89571](https://github.com/unabandoned/node-util/commit/0e89571afadeeafff1e15d9716c66f5f19d1f7ef))
+
 ## [0.12.6](https://github.com/unabandoned/node-util/compare/util-v0.12.5...util-v0.12.6) (2026-08-14)
 
 
