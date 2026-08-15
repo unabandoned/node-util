@@ -6,7 +6,6 @@
 var isArgumentsObject = require('is-arguments');
 var isGeneratorFunction = require('is-generator-function');
 var whichTypedArray = require('which-typed-array');
-var isTypedArray = require('is-typed-array');
 
 function uncurryThis(f) {
   return f.call.bind(f);
@@ -39,6 +38,14 @@ function checkBoxedPrimitive(value, prototypeValueOf) {
   } catch(e) {
     return false;
   }
+}
+
+// isTypedArray(): is-typed-array was a three-line wrapper over
+// which-typed-array, which this module already requires directly. Inlining it
+// drops an abandoned package that sat on abandoned dependencies of its own,
+// with no maintainer left to bump them.
+function isTypedArray(value) {
+  return !!whichTypedArray(value);
 }
 
 exports.isArgumentsObject = isArgumentsObject;
