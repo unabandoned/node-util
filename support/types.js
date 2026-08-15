@@ -3,7 +3,6 @@
 
 'use strict';
 
-var isArgumentsObject = require('is-arguments');
 var isGeneratorFunction = require('is-generator-function');
 var whichTypedArray = require('which-typed-array');
 
@@ -47,6 +46,42 @@ function checkBoxedPrimitive(value, prototypeValueOf) {
 function isTypedArray(value) {
   return !!whichTypedArray(value);
 }
+
+// isArgumentsObject(): vendored from is-arguments, which was abandoned (frozen
+// at 1.2.0, 2024-12-13) on top of abandoned dependencies of its own. It only
+// needed Object.prototype.toString and a Symbol.toStringTag probe, both of
+// which this module already had, so carrying the package bought nothing.
+// Semantics are kept faithful, including the legacy branch: engines that
+// report arguments objects as something other than '[object Arguments]' fall
+// back to duck-typing on length + callee.
+var hasToStringTag = SymbolSupported && !!Symbol.toStringTag;
+
+function isStandardArguments(value) {
+  if (hasToStringTag && value && typeof value === 'object' && Symbol.toStringTag in value) {
+    return false;
+  }
+  return ObjectToString(value) === '[object Arguments]';
+}
+
+function isLegacyArguments(value) {
+  if (isStandardArguments(value)) {
+    return true;
+  }
+  return value !== null
+    && typeof value === 'object'
+    && 'length' in value
+    && typeof value.length === 'number'
+    && value.length >= 0
+    && ObjectToString(value) !== '[object Array]'
+    && 'callee' in value
+    && ObjectToString(value.callee) === '[object Function]';
+}
+
+var supportsStandardArguments = (function () {
+  return isStandardArguments(arguments);
+}());
+
+var isArgumentsObject = supportsStandardArguments ? isStandardArguments : isLegacyArguments;
 
 exports.isArgumentsObject = isArgumentsObject;
 exports.isGeneratorFunction = isGeneratorFunction;
