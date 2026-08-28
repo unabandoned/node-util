@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12.9](https://github.com/unabandoned/node-util/compare/util-v0.12.8...util-v0.12.9) (2026-08-28)
+
+
+### Dependencies & maintenance
+
+* **deps:** update unabandoned/.github action to v1.0.3 ([#14](https://github.com/unabandoned/node-util/issues/14)) ([f6a159f](https://github.com/unabandoned/node-util/commit/f6a159f129470288e711dfd37e5b17e2fbef3503))
+
 ## [0.12.8](https://github.com/unabandoned/node-util/compare/util-v0.12.7...util-v0.12.8) (2026-08-23)
 
 
