@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12.10](https://github.com/unabandoned/node-util/compare/util-v0.12.9...util-v0.12.10) (2026-09-22)
+
+
+### Dependencies & maintenance
+
+* **deps:** update unabandoned/.github action to v1.0.4 ([#16](https://github.com/unabandoned/node-util/issues/16)) ([f70f680](https://github.com/unabandoned/node-util/commit/f70f6805b08741c99c76312a4d156970d7741514))
+* **deps:** update unabandoned/.github action to v1.0.5 ([#17](https://github.com/unabandoned/node-util/issues/17)) ([091013e](https://github.com/unabandoned/node-util/commit/091013e77066ab77a726516e3f642b11857f5fb0))
+* **deps:** update unabandoned/.github action to v1.1.0 ([#19](https://github.com/unabandoned/node-util/issues/19)) ([ce6c75d](https://github.com/unabandoned/node-util/commit/ce6c75d212c7794e52cc57821b7a25d5ab48be85))
+* stop routing security reports and sponsorship to upstream ([#20](https://github.com/unabandoned/node-util/issues/20)) ([cdf1c59](https://github.com/unabandoned/node-util/commit/cdf1c59e9c0ae057c9949bd25e0dbf5b6ae63cfb))
+
 ## [0.12.9](https://github.com/unabandoned/node-util/compare/util-v0.12.8...util-v0.12.9) (2026-08-28)
 
 
