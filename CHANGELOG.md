@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12.11](https://github.com/unabandoned/node-util/compare/util-v0.12.10...util-v0.12.11) (2026-09-23)
+
+
+### Bug Fixes
+
+* stop dev-only commits from cutting releases ([#23](https://github.com/unabandoned/node-util/issues/23)) ([7929ab7](https://github.com/unabandoned/node-util/commit/7929ab70562b3b68a5535b6bac6b3c7e4fc87179))
+
 ## [0.12.10](https://github.com/unabandoned/node-util/compare/util-v0.12.9...util-v0.12.10) (2026-09-22)
 
 
