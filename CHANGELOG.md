@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12.11](https://github.com/unabandoned/node-util/compare/util-v0.12.10...util-v0.12.11) (2026-09-23)
+
+
+### Dependencies & maintenance
+
+* **deps:** update commitlint monorepo to v21.2.3 ([#21](https://github.com/unabandoned/node-util/issues/21)) ([c204566](https://github.com/unabandoned/node-util/commit/c2045666c21a7c1e707aca0548297982e356a6bc))
+
 ## [0.12.10](https://github.com/unabandoned/node-util/compare/util-v0.12.9...util-v0.12.10) (2026-09-22)
 
 
