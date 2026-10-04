@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12.12](https://github.com/unabandoned/node-util/compare/util-v0.12.11...util-v0.12.12) (2026-10-04)
+
+
+### Bug Fixes
+
+* vendor is-generator-function ([#30](https://github.com/unabandoned/node-util/issues/30)) ([1d03744](https://github.com/unabandoned/node-util/commit/1d0374400a1e921ccef20bd354df19968d63a005))
+
 ## [0.12.11](https://github.com/unabandoned/node-util/compare/util-v0.12.10...util-v0.12.11) (2026-09-23)
 
 
