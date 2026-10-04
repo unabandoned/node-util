@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12.13](https://github.com/unabandoned/node-util/compare/util-v0.12.12...util-v0.12.13) (2026-10-04)
+
+
+### Bug Fixes
+
+* release 0.12.13 with the vendor directory ([#33](https://github.com/unabandoned/node-util/issues/33)) ([1eed473](https://github.com/unabandoned/node-util/commit/1eed4738089670e038c04e19f928846bafff3fd5))
+
 ## [0.12.12](https://github.com/unabandoned/node-util/compare/util-v0.12.11...util-v0.12.12) (2026-10-04)
 
 
