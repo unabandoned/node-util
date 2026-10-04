@@ -3,7 +3,7 @@
 
 'use strict';
 
-var isGeneratorFunction = require('is-generator-function');
+var isGeneratorFunction = require('../vendor/is-generator-function');
 var whichTypedArray = require('which-typed-array');
 
 function uncurryThis(f) {
