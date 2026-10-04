@@ -19,7 +19,8 @@
   },
   "files": [
     "util.js",
-    "support"
+    "support",
+    "vendor"
   ],
   "homepage": "https://github.com/unabandoned/node-util#readme",
   "keywords": [
