@@ -589,7 +589,23 @@ exports.log = function() {
  *     prototype.
  * @param {function} superCtor Constructor function to inherit prototype from.
  */
-exports.inherits = require('inherits');
+// Inlined from the inherits package (ISC, Isaac Z. Schlueter): its browser
+// implementation, which is what a bundle of this module always got. Its other
+// branch, a TempCtor shim for engines without Object.create, is dropped --
+// Object.create is ES5.
+exports.inherits = function inherits(ctor, superCtor) {
+  if (superCtor) {
+    ctor.super_ = superCtor;
+    ctor.prototype = Object.create(superCtor.prototype, {
+      constructor: {
+        value: ctor,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+  }
+};
 
 exports._extend = function(origin, add) {
   // Don't do anything if add isn't an object

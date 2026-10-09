@@ -8,7 +8,9 @@ var tests = [
   require.resolve('./log'),
   require.resolve('./promisify'),
   require.resolve('./callbackify'),
-  require.resolve('./types')
+  require.resolve('./types'),
+  require.resolve('./which-typed-array'),
+  require.resolve('./inherits')
 ];
 
 function run(filename) {

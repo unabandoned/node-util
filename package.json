@@ -9,13 +9,11 @@
   "browser": {
     "./support/isBuffer.js": "./support/isBufferBrowser.js"
   },
-  "dependencies": {
-    "inherits": "^2.0.4",
-    "which-typed-array": "^1.1.22"
-  },
   "devDependencies": {
     "@commitlint/cli": "21.2.3",
-    "@commitlint/config-conventional": "21.2.3"
+    "@commitlint/config-conventional": "21.2.3",
+    "inherits": "2.0.4",
+    "which-typed-array": "1.1.24"
   },
   "files": [
     "util.js",
