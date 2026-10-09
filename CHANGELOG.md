@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12.14](https://github.com/unabandoned/node-util/compare/util-v0.12.13...util-v0.12.14) (2026-10-09)
+
+
+### Dependencies & maintenance
+
+* drop which-typed-array and inherits ([#35](https://github.com/unabandoned/node-util/issues/35)) ([ad22b78](https://github.com/unabandoned/node-util/commit/ad22b78ab0f2a6e137cd0904d5eb561fa2c518a2))
+
 ## [0.12.13](https://github.com/unabandoned/node-util/compare/util-v0.12.12...util-v0.12.13) (2026-10-04)
 
 
