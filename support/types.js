@@ -4,7 +4,6 @@
 'use strict';
 
 var isGeneratorFunction = require('../vendor/is-generator-function');
-var whichTypedArray = require('which-typed-array');
 
 function uncurryThis(f) {
   return f.call.bind(f);
@@ -12,6 +11,59 @@ function uncurryThis(f) {
 
 var BigIntSupported = typeof BigInt !== 'undefined';
 var SymbolSupported = typeof Symbol !== 'undefined';
+
+// whichTypedArray(): replaces the which-typed-array package, which reached for
+// seven helper packages (for-each, available-typed-arrays, call-bind,
+// call-bound, gopd, get-proto, has-tostringtag) to call one built-in.
+//
+// Every typed array inherits from %TypedArray%.prototype, whose
+// Symbol.toStringTag getter returns the [[TypedArrayName]] internal slot -- so
+// it answers for real typed arrays only (subclasses and other realms included)
+// and returns undefined for everything else, fakes with an own toStringTag and
+// proxies included. It never throws.
+//
+// which-typed-array returns false (not undefined) for a non-typed-array and
+// only names constructors this realm has, so this does too. The guards keep the
+// module loading on an engine without typed arrays or Symbol.toStringTag,
+// where nothing can be a typed array.
+var typedArrayTagGetter = null;
+if (typeof Uint8Array === 'function' && SymbolSupported && typeof Symbol.toStringTag === 'symbol') {
+  var typedArrayTag = Object.getOwnPropertyDescriptor(
+    Object.getPrototypeOf(Uint8Array.prototype),
+    Symbol.toStringTag
+  );
+  if (typedArrayTag && typeof typedArrayTag.get === 'function') {
+    typedArrayTagGetter = uncurryThis(typedArrayTag.get);
+  }
+}
+
+var typedArrayNames = Object.create(null);
+[
+  typeof Float16Array === 'function' && 'Float16Array',
+  typeof Float32Array === 'function' && 'Float32Array',
+  typeof Float64Array === 'function' && 'Float64Array',
+  typeof Int8Array === 'function' && 'Int8Array',
+  typeof Int16Array === 'function' && 'Int16Array',
+  typeof Int32Array === 'function' && 'Int32Array',
+  typeof Uint8Array === 'function' && 'Uint8Array',
+  typeof Uint8ClampedArray === 'function' && 'Uint8ClampedArray',
+  typeof Uint16Array === 'function' && 'Uint16Array',
+  typeof Uint32Array === 'function' && 'Uint32Array',
+  typeof BigInt64Array === 'function' && 'BigInt64Array',
+  typeof BigUint64Array === 'function' && 'BigUint64Array'
+].forEach(function (name) {
+  if (name) {
+    typedArrayNames[name] = true;
+  }
+});
+
+function whichTypedArray(value) {
+  if (!value || typeof value !== 'object' || !typedArrayTagGetter) {
+    return false;
+  }
+  var name = typedArrayTagGetter(value);
+  return typeof name === 'string' && typedArrayNames[name] === true ? name : false;
+}
 
 var ObjectToString = uncurryThis(Object.prototype.toString);
 
@@ -40,9 +92,8 @@ function checkBoxedPrimitive(value, prototypeValueOf) {
 }
 
 // isTypedArray(): is-typed-array was a three-line wrapper over
-// which-typed-array, which this module already requires directly. Inlining it
-// drops an abandoned package that sat on abandoned dependencies of its own,
-// with no maintainer left to bump them.
+// which-typed-array. Inlining it dropped an abandoned package that sat on
+// abandoned dependencies of its own, with no maintainer left to bump them.
 function isTypedArray(value) {
   return !!whichTypedArray(value);
 }
