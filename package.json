@@ -10,8 +10,8 @@
     "./support/isBuffer.js": "./support/isBufferBrowser.js"
   },
   "devDependencies": {
-    "@commitlint/cli": "21.2.3",
-    "@commitlint/config-conventional": "21.2.3",
+    "@commitlint/cli": "21.2.4",
+    "@commitlint/config-conventional": "21.2.4",
     "inherits": "2.0.4",
     "which-typed-array": "1.1.24"
   },
